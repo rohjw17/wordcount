@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<style>
+    table, th, td { border: 1px solid gray;}
+    th {padding:5px;}
+    td { padding: 5px 10px; }
+    span {color:blue;}
+    .text {border:1px solid gray; padding:10px;}
+</style>
+<h1>Your input contains <span>{{total}}</span> words in total.</h1>
+<br>
+<h2>text input : </h2>
+<div class="text">
+{{full}}
+</div>
+
+<h2>word count : </h2>
+<table>
+    <tbody>
+{% for word, count in dictionary %}
+        <tr>
+            <th>{{word}}</th>
+            <td>{{count}}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+{% endblock %}
